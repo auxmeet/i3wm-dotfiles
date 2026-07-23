@@ -9,7 +9,7 @@ echo -e "${YELLOW}Установка утилит и dotfiles...${NC}"
 
 # Список утилит для установки
 PACKAGESPACMAN=(
-    "i3"
+    "i3-wm"
     "rofi"
     "udiskie"
     "udisks2"
