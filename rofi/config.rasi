@@ -3,7 +3,7 @@ configuration {
     font: "Monospace 11";
     show-icons: true;
     icon-theme: "Adwaita";
-    terminal: "alacritty";
+    terminal: "kitty";
     drun-display-format: "{name}";
     location: 0;
     disable-history: false;
@@ -22,7 +22,7 @@ configuration {
     fg-sel:      #A59E80;   
     accent:      #A59EB0;   
 
-    background-color: @bg;
+    background-color: transparent;
     text-color:       @fg;
 }
 
