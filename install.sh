@@ -9,9 +9,7 @@ echo -e "${YELLOW}Установка утилит и dotfiles...${NC}"
 
 # Список утилит для установки
 PACKAGES=(
-    "bspwm"
-    "sxhkd"
-    "git"
+    "i3"
     "rofi"
     "udiskie"
     "udisks2"
@@ -51,12 +49,10 @@ done
 
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
-cp -r bspwm ~/.config/bspwm/
 cp -r dunst ~/.config/dunst/
 cp -r polybar ~/.config/polybar/
 cp -r picom ~/.config/picom/
-cp -r sxhkd ~/.config/sxhkd/
+cp -r i3 ~/.config/i3/
 cp -r kitty ~/.config/kitty/
-cp -r fastfetch ~/.config/fastfetch/
 cp -r rofi ~/.config/rofi
 echo -e "${GREEN}✓ Все готово!${NC}"
