@@ -9,8 +9,7 @@ echo -e "${YELLOW}Установка утилит и dotfiles...${NC}"
 
 # Список утилит для установки (пробелы в начале удалены)
 PACKAGESPACMAN=(
-    "bspwm"
-    "sxhkd"
+    "i3-wm"
     "rofi"
     "udiskie"
     "udisks2"
