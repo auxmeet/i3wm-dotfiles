@@ -25,7 +25,7 @@ exec --no-startup-id /usr/lib/xdg-desktop-portal &
 exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk &
 
 # polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id /home/$USER/.config/polybar/launch.sh
 
 # udiskie auto mount
 exec --no-startup-id udiskie -t
@@ -34,7 +34,7 @@ exec --no-startup-id udiskie -t
 exec_always --no-startup-id setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
 
 # feh wallpaper 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wall.jpg
+exec_always --no-startup-id feh --bg-fill /home/$USER/wallpapers/wall.jpg
 
 # picom
 exec_always --no-startup-id picom -b
