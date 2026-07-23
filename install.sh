@@ -25,12 +25,6 @@ PACKAGESPACMAN=(
     "paru"
 )
 
-# Проверка, запущен ли как root
-if [[ $EUID -ne 0 ]]; then
-   echo -e "${RED}Скрипт должен быть запущен с sudo${NC}"
-   exit 1
-fi
-
 # Обновление пакетов
 echo -e "${YELLOW}Обновление pacman...${NC}"
 pacman -Syu --noconfirm
