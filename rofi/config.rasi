@@ -22,7 +22,7 @@ configuration {
     fg-sel:      #A59E80;   
     accent:      #A59EB0;   
 
-    background-color: transparent;
+    background-color: @bg;
     text-color:       @fg;
 }
 
