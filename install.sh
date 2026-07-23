@@ -67,10 +67,10 @@ cp wall.jpg ~/wallpapers/
 
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
-ln -sf dunst ~/.config/dunst/
-ln -sf polybar ~/.config/polybar/
-ln -sf picom ~/.config/picom/
-ln -sf i3 ~/.config/i3/
-ln -sf kitty ~/.config/kitty/
-ln -sf rofi ~/.config/rofi/
+cp -r dunst ~/.config/dunst/
+cp -r polybar ~/.config/polybar/
+cp -r picom ~/.config/picom/
+cp -r i3 ~/.config/i3/
+cp -r kitty ~/.config/kitty/
+cp -r rofi ~/.config/rofi/
 echo -e "${GREEN}✓ Все готово!${NC}"
