@@ -1,0 +1,140 @@
+#
+#   "     mmmm
+# mmm    "   " #m     m mmmmm
+#   #      mmm ""m m m" # # #
+#   #        " # #m#m#  # # #
+# mm#mm  "mmm# "  # #   # # #
+#
+#    config by m33tkr33t
+#    i3wm version 4.25.1
+#
+
+# Set win key
+set $mod Mod4
+
+# Options for gaps,font,border
+font pango:Monospace 8
+gaps inner 4 px 
+gaps outer 0 px
+default_border pixel 0 px
+default_floating_border pixel 0 px
+
+# xdg-desktop-portal
+exec --no-startup-id dbus-update-activation-environment --systemd --all
+exec --no-startup-id /usr/lib/xdg-desktop-portal &
+exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk &
+
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# udiskie auto mount
+exec --no-startup-id udiskie -t
+
+# us,ru keyboard layout
+exec_always --no-startup-id setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
+
+# feh wallpaper 
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wall.jpg
+
+# picom
+exec_always --no-startup-id picom -b
+
+# daemon for networkmanager
+exec --no-startup-id nm-applet
+
+# audio control
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 10.0 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# floating window
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# keybinds
+# thunar
+bindsym $mod+e exec thunar
+
+# rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym Mod1+Tab exec --no-startup-id rofi -show window
+
+# other keybinds
+bindsym $mod+r mode "resize"
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+q kill
+
+# close i3wm
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Close i3?' -B 'Yes!' 'i3-msg exit'"
+
+# screenshot 
+# clipboard fullscreen
+bindsym $mod+Shift+d exec --no-startup-id maim /tmp/tempsc.png && xclip -selection clipboard -t image/png -in /tmp/tempsc.png && rm /tmp/tempsc.png
+# clipboard selection
+bindsym $mod+Shift+s exec --no-startup-id maim -o -s /tmp/tempsc.png && xclip -selection clipboard -t image/png -in /tmp/tempsc.png && rm /tmp/tempsc.png 
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# other
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+l layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# resize mode
+mode "resize" {
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#color settings
+client.focused            #81a1c1 #81a1c1 #ffffff #81a1c1   #81a1c1
+client.focused_inactive   #2e3440 #2e3440 #d8dee9 #2e3440   #2e3440
+client.unfocused          #2e3440 #2e3440 #d8dee9 #2e3440   #2e3440
+client.urgent             #bf616a #bf616a #ffffff #bf616a   #bf616a
+client.placeholder        #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background         #2e3440

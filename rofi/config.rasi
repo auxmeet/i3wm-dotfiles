@@ -1,0 +1,100 @@
+configuration {
+    modi: "drun,run";
+    font: "Monospace 11";
+    show-icons: true;
+    icon-theme: "Adwaita";
+    terminal: "alacritty";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "  ";
+    display-run: "  ";
+    display-window: "  ";
+}
+
+@theme "/dev/null"
+
+* {
+    bg:          #110d1f;
+    bg-sel:      #0a0812;   
+    fg:          #A59EB0;   
+    fg-sel:      #A59E80;   
+    accent:      #A59EB0;   
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    background-color: @bg;
+    border:           1px;
+    border-color:     #352D45; 
+    border-radius:    14px;
+    width:            550px;
+    padding:          15px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 12px;
+}
+
+inputbar {
+    background-color: #0a0812;
+    border-radius:    20px;
+    padding:          10px 16px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+    margin:     0px 5px 0px 0px;
+}
+
+entry {
+    text-color:        #A59EB0;
+    placeholder:       "Search...";
+    placeholder-color: #A59EB0;
+}
+
+listview {
+    fixed-height: 0;
+    lines:        8;
+    scrollbar:    false;
+    spacing:      6px;
+}
+
+element {
+    padding:       10px 14px;
+    border-radius: 10px;
+    spacing:       12px;
+}
+
+element-text, element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+element-icon {
+    size:             24px;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    alpha:            0.6;
+}
+
+element-icon selected {
+    alpha:            1.0;
+}
+
+element normal text {
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @bg-sel;
+}
+
+element selected text {
+    text-color: @fg-sel;
+}
