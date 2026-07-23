@@ -8,7 +8,7 @@ NC='\033[0m'
 echo -e "${YELLOW}Установка утилит и dotfiles...${NC}"
 
 # Список утилит для установки
-PACKAGES=(
+PACKAGESPACMAN=(
     "i3"
     "rofi"
     "udiskie"
@@ -37,7 +37,7 @@ pacman -Syu --noconfirm
 
 # Установка утилит
 echo -e "${YELLOW}Установка утилит...${NC}"
-for package in "${PACKAGES[@]}"; do
+for package in "${PACKAGESPACMAN[@]}"; do
     echo "Установка $package..."
     pacman -S "$package" --noconfirm
     if [ $? -eq 0 ]; then
@@ -46,6 +46,30 @@ for package in "${PACKAGES[@]}"; do
         echo -e "${RED}✗ Ошибка при установке $package${NC}"
     fi
 done
+
+PACKAGESPARU=(
+    "picom-ftlabs-git"
+)
+
+# Обновление пакетов
+echo -e "${YELLOW}Обновление paru...${NC}"
+paru -Syu --noconfirm
+
+# Установка утилит
+echo -e "${YELLOW}Установка утилиты picom-ftlabs-git и обоев${NC}"
+for package in "${PACKAGESPARU[@]}"; do
+    echo "Установка $package..."
+    paru -S "$package" --noconfirm
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✓ $package установлен${NC}"
+    else
+        echo -e "${RED}✗ Ошибка при установке $package${NC}"
+    fi
+done
+
+echo -e "${YELLOW}Копирование обоев..${NC}"
+mkdir -p ~/wallpapers/
+cp wall.jpg ~/wallpapers/
 
 # Копирование dotfiles
 echo -e "${YELLOW}Копирование конфигов...${NC}"
