@@ -1,7 +1,7 @@
 # i3wm-dotfiles
 for install my cool dotfiles and install stuff type
  ```bash
-git clone https://github.com/auxmeet/bspwm-dotfiles.git
-cd bspwm-dotfiles
+git clone https://github.com/auxmeet/i3wm-dotfiles.git
+cd i3wm-dotfiles
 sudo -E ./install.sh
 ```
