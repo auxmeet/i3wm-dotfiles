@@ -54,5 +54,5 @@ cp -r polybar ~/.config/polybar/
 cp -r picom ~/.config/picom/
 cp -r i3 ~/.config/i3/
 cp -r kitty ~/.config/kitty/
-cp -r rofi ~/.config/rofi
+cp -r rofi ~/.config/rofi/
 echo -e "${GREEN}✓ Все готово!${NC}"
