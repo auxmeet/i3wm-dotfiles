@@ -35,6 +35,5 @@ cp wall.jpg "$HOME/wallpapers/"
 # Копирование dotfiles БЕЗ использования sudo
 echo -e "${YELLOW}Копирование конфигов...${NC}"
 mkdir -p "$HOME/.config/"
-cp -r rofi dunst kitty picom polybar i3 "$HOME/.config/"
-
+sudo cp -r rofi dunst kitty picom polybar i3 "$HOME/.config/"
 echo -e "${GREEN}✓ Все готово!${NC}"
