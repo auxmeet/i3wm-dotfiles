@@ -1,13 +1,9 @@
 #!/bin/bash
-
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
-
 echo -e "${YELLOW}Установка утилит и dotfiles...${NC}"
-
-# Список утилит для установки (пробелы в начале удалены)
 PACKAGESPACMAN=(
     "i3-wm"
     "rofi"
@@ -24,12 +20,8 @@ PACKAGESPACMAN=(
     "xorg-xsetroot"
     "paru"
 )
-
-# Обновление пакетов
 echo -e "${YELLOW}Обновление pacman...${NC}"
 pacman -Syu --noconfirm
-
-# Установка утилит через официальный менеджер пакетов
 echo -e "${YELLOW}Установка утилит...${NC}"
 for package in "${PACKAGESPACMAN[@]}"; do
     echo "Установка $package..."
