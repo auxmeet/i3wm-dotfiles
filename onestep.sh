@@ -22,7 +22,7 @@ PACKAGESPACMAN=(
 )
 echo -e "${YELLOW}Update pacman...${NC}"
 pacman -Syu --noconfirm
-echo -e "${YELLOW}Installing utilities${NC}"
+echo -e "${YELLOW}Installing utilities...${NC}"
 for package in "${PACKAGESPACMAN[@]}"; do
     echo "Installing $package..."
     sudo pacman -S "$package" --noconfirm
