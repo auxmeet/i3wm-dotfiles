@@ -60,14 +60,14 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym Mod1+Tab exec --no-startup-id rofi -show window
 
 # other keybinds
-bindsym $mod+r mode "resize"
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+z mode "resize"
+bindsym $mod+c reload
+bindsym $mod+r restart
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # close i3wm
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Close i3?' -B 'Yes!' 'i3-msg exit'"
+bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'Close i3?' -B 'Yes!' 'i3-msg exit'"
 
 # screenshot 
 # clipboard fullscreen
