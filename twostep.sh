@@ -19,7 +19,7 @@ for package in "${PACKAGESPARU[@]}"; do
         echo -e "${RED}✗ Error while installing $package${NC}"
     fi
 done
-echo -e "${YELLOW}Copy wallpapers..${NC}"
+echo -e "${YELLOW}Copy wallpaper..${NC}"
 mkdir -p "$HOME/wallpapers/"
 cp wall.jpg "$HOME/wallpapers/"
 echo -e "${YELLOW}Copy dotfiles...${NC}"
