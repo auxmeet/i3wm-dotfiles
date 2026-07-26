@@ -20,6 +20,7 @@ PACKAGESPACMAN=(
     "xorg-xsetroot"
     "paru"
 )
+
 echo -e "${YELLOW}Update pacman...${NC}"
 pacman -Syu --noconfirm
 echo -e "${YELLOW}Installing utilities...${NC}"
