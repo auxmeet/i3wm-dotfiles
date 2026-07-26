@@ -12,7 +12,7 @@ paru -Syu --noconfirm
 echo -e "${YELLOW}Install picom-ftlabs-git and set wallpaper...${NC}"
 for package in "${PACKAGESPARU[@]}"; do
     echo "Установка $package..."
-    paru -S "$package" --noconfirm
+    paru -S "$package" --noconfirm > /dev/null
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✓ $package installed${NC}"
     else
