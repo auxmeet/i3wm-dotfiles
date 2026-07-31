@@ -1,103 +1,126 @@
-#
-#   "     mmmm
-# mmm    "   " #m     m mmmmm
-#   #      mmm ""m m m" # # #
-#   #        " # #m#m#  # # #
-# mm#mm  "mmm# "  # #   # # #
-#
-#    config by auxmeet
-#    i3wm version 4.25.1
-#
+# i3wm version 4.25.1
+# config by auxmeet
+
+# Sets the modifier key used to control floating window dragging/resizing with the mouse
+floating_modifier $mod
+
+# Allows dragging tiling windows by their titlebar, but only while holding the given modifier
+tiling_drag modifier titlebar
 
 # Set win key
+# $mod is your “modifier” key (usually the Windows/Super key).
+# Each line binds an action to a combination like $mod+<key>
 set $mod Mod4
 
 # Options for gaps,font,border
+# Sets the window font to Monospace at size 8
 font pango:Monospace 8
+
+# Sets the inner gaps between tiled windows to 4 px
 gaps inner 4 px 
-gaps outer 0 px
+
+# Sets the outer gaps (space between windows and the screen edge) to 0 px
+gaps outer 2 px
+
+# Sets the default border width for normal tiled windows to 0 px
 default_border pixel 0 px
+
+# sets the border width for floating windows to 0 px
 default_floating_border pixel 0 px
 
-# xdg-desktop-portal
+# Xdg-desktop-portal
 exec --no-startup-id dbus-update-activation-environment --systemd --all
 exec --no-startup-id /usr/lib/xdg-desktop-portal &
 exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk &
 
-# polybar
+# Polybar
 exec_always --no-startup-id /home/$USER/.config/polybar/launch.sh
 
-# udiskie auto mount
+# Udiskie 
 exec --no-startup-id udiskie -t
 
-# us,ru keyboard layout
+# US,RU Keyboard layout
+# If you don't use the Russian keyboard layout, you can cross out or delete the line below.
 exec_always --no-startup-id setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
 
-# feh wallpaper 
+# Feh wallpaper 
 exec_always --no-startup-id feh --bg-fill /home/$USER/wallpapers/wall.jpg
 
-# picom
+# Picom
 exec_always --no-startup-id picom -b
 
-# daemon for networkmanager
-exec --no-startup-id nm-applet
+# Pactl audio control 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# audio control
-bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 10.0 @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+# Keybinds
 
-# floating window
-floating_modifier $mod
-tiling_drag modifier titlebar
-
-# keybinds
-# thunar
+# Thunar from xfce4
 bindsym $mod+e exec thunar
 
-# rofi
+# Rofi
+# (win+D)
 bindsym $mod+d exec --no-startup-id rofi -show drun
+# (alt+tab)
 bindsym Mod1+Tab exec --no-startup-id rofi -show window
 
-# other keybinds
+# Enters the "resize" mode
 bindsym $mod+z mode "resize"
+# Reload i3
 bindsym $mod+c reload
+# Restart i3
 bindsym $mod+r restart
+# Launches terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# Kills the focused window
 bindsym $mod+q kill
-
-# close i3wm
+# Close I3wm
 bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'Close i3?' -B 'Yes!' 'i3-msg exit'"
 
-# screenshot 
-# clipboard fullscreen
-bindsym $mod+Shift+d exec --no-startup-id maim /tmp/tempsc.png && xclip -selection clipboard -t image/png -in /tmp/tempsc.png && rm /tmp/tempsc.png
-# clipboard selection
-bindsym $mod+Shift+s exec --no-startup-id maim -o -s /tmp/tempsc.png && xclip -selection clipboard -t image/png -in /tmp/tempsc.png && rm /tmp/tempsc.png 
+# Screenshot 
+# Clipboard fullscreen
+bindsym $mod+Shift+d exec --no-startup-id maim /tmp/tempimage.png && xclip -selection clipboard -t image/png -in /tmp/tempimage.png && rm /tmp/tempimage.png
+# Clipboard selection
+bindsym $mod+Shift+s exec --no-startup-id maim -o -s /tmp/tempimage.png && xclip -selection clipboard -t image/png -in /tmp/tempimage.png && rm /tmp/tempimage.png 
 
-# change focus
+# Change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# other
+# Split the current container horizontally (side-by-side / to the left)
 bindsym $mod+h split h
+
+# Split the current container vertically (top-to-bottom / to the bottom)
 bindsym $mod+v split v
+
+# Toggle fullscreen for the focused window
 bindsym $mod+f fullscreen toggle
+
+# Set layout to stacking (windows stacked)
 bindsym $mod+s layout stacking
+
+# Set layout to tabbed (windows as tabs)
 bindsym $mod+w layout tabbed
+
+# Toggle split switch/toggle the split mode for the current layout
 bindsym $mod+l layout toggle split
+
+# Toggle the focused window between floating and tiled
 bindsym $mod+Shift+space floating toggle
+
+# Toggle focus mode (mode_toggle)
 bindsym $mod+space focus mode_toggle
 
-# switch to workspace
+# Switch to workspace 1-10
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -109,7 +132,7 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# move focused container to workspace
+# Move focused container to workspace 1-10
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -121,7 +144,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# resize mode
+# Resize mode
 mode "resize" {
         bindsym Right resize shrink width 10 px or 10 ppt
         bindsym Up resize grow height 10 px or 10 ppt
@@ -131,7 +154,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-#color settings
+# Color settings !!! under construction !!!
 client.focused            #81a1c1 #81a1c1 #ffffff #81a1c1   #81a1c1
 client.focused_inactive   #2e3440 #2e3440 #d8dee9 #2e3440   #2e3440
 client.unfocused          #2e3440 #2e3440 #d8dee9 #2e3440   #2e3440
