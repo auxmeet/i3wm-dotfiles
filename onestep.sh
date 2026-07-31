@@ -23,7 +23,7 @@ PACKAGESPACMAN=(
     "xorg-server"
     "base-devel"
 )
-echo -e "${YELLOW}Install paru...${NC}"
+echo -e "${YELLOW}Installing paru...${NC}"
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
