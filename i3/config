@@ -76,7 +76,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Kills the focused window
 bindsym $mod+q kill
 # Close I3wm
-bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'Close i3?' -B 'Yes!' 'i3-msg exit'"
+bindsym $mod+p exec "i3-nagbar -t warning -m 'Close i3?' -B 'Yes!' 'i3-msg exit'"
 
 # Screenshot 
 # Clipboard fullscreen
