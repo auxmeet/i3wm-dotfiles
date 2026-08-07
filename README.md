@@ -1,5 +1,5 @@
 # i3wm-dotfiles
-for install my cool dotfiles and install stuff type
+for install my dotfiles and stuff type this in your terminal:
  ```bash
 git clone https://github.com/auxmeet/i3wm-dotfiles.git
 cd i3wm-dotfiles
