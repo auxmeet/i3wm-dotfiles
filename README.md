@@ -8,6 +8,8 @@ chmod +x twostep.sh
 sudo ./onestep.sh
 ./twostep.sh
 ```
+<a name="my-custom-anchor-point"></a>
+[A link to that custom anchor](#my-custom-anchor-point)
 ## Use only CachyOS or other Arch-based
 # Keybinds
 ## System & Media
