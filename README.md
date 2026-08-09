@@ -40,7 +40,7 @@ sudo ./onestep.sh
 
 
 ## Window Resizing Mode
-###Pressing $mod + z enters a dedicated Resize Mode. While in this mode, standard keybinds are locked, and the arrow keys behave as follows:
+### Pressing $mod + z enters a dedicated Resize Mode. While in this mode, standard keybinds are locked, and the arrow keys behave as follows:
 
 # Packages list 
 ## Installed with pacman:
