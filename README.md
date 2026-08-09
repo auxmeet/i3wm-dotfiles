@@ -8,7 +8,7 @@ chmod +x twostep.sh
 sudo ./onestep.sh
 ./twostep.sh
 ```
-
+##### CachyOS
 # Keybinds
 ## System & Media
 - `Super + C`: Reload the i3.
