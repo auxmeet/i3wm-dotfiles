@@ -9,7 +9,7 @@ sudo ./onestep.sh
 ./twostep.sh
 ```
 
-## Use only [CachyOS](https://cachyos.org/download/). or other Arch-based
+## Use only [CachyOS](https://cachyos.org/download/) or other Arch-based
 # Keybinds
 ## System & Media
 - `Super + C`: Reload the i3.
