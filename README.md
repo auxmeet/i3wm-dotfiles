@@ -11,9 +11,9 @@ sudo ./onestep.sh
 
 # Keybinds
 ## System & Media
-- `$mod + c`: Reload the i3.
-- `$mod + r`: Restart i3.
-- `$mod + p`: Exit i3.
+- `$mod + C`: Reload the i3.
+- `$mod + R`: Restart i3.
+- `$mod + P`: Exit i3.
 - `XF86AudioRaiseVolume` or `FN + F4`: Increases the volume by 5%.
 - `XF86AudioLowerVolume` or `FN + F4`: Decreases the volume by 5%.
 - `XF86AudioMute` or `FN + F4`: Mutes or unmutes the default audio device.
@@ -35,9 +35,15 @@ sudo ./onestep.sh
 - `Super + 1-9, 0`: Switches to the selected workspace (1 to 10).
 - `Super + Shift + 1-9, 0`: Sends the focused window to the selected
 
-
 ## Layout & Tiling Controls
-
+- `Super + H`: Split horizontally (forces the next opened window to appear to the right).
+- `Super + V`: Split vertically (forces the next opened window to appear below).
+- `Super + F`: Toggle fullscreen mode for the active window.
+- `Super + S`: Stacking layout (stacks windows vertically; only active window title is fully visible).
+- `Super + W`: Tabbed layout (arranges windows like browser tabs at the top).
+- `Super + L`: Toggle split (switches the current container layout direction).
+- `Super + Shift + Space`: Toggle floating (switches the focused window between tiled and floating mode).
+- `Super + Space`: Toggle focus mode (switches focus control between the tiling layer and floating layer).
 
 ## Window Resizing Mode
 ### Pressing `Super + Z` enters a dedicated Resize Mode. While in this mode, standard keybinds are locked, and the arrow keys behave as follows:
