@@ -8,7 +8,6 @@ chmod +x twostep.sh
 sudo ./onestep.sh
 ./twostep.sh
 ```
-
 ## Use only [CachyOS](https://cachyos.org/download/) or other Arch-based
 # Keybinds
 ## System & Media
