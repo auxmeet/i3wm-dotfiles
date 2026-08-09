@@ -41,6 +41,11 @@ sudo ./onestep.sh
 
 ## Window Resizing Mode
 ### Pressing $mod + z enters a dedicated Resize Mode. While in this mode, standard keybinds are locked, and the arrow keys behave as follows:
+- `Right`: Shrink width of the window.
+- `Left`:  Grow width of the window.
+- `Up`: Grow height of the window.
+- `Down`: Shrink height of the window.
+- `Return` or `Escape`: Exit resize mode and return to standard controls.
 
 # Packages list 
 ## Installed with pacman:
