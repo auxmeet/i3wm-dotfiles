@@ -40,7 +40,7 @@ sudo ./onestep.sh
 
 
 ## Window Resizing Mode
-### Pressing $mod + z enters a dedicated Resize Mode. While in this mode, standard keybinds are locked, and the arrow keys behave as follows:
+### Pressing `Super + Z` enters a dedicated Resize Mode. While in this mode, standard keybinds are locked, and the arrow keys behave as follows:
 - `Right`: Shrink width of the window.
 - `Left`:  Grow width of the window.
 - `Up`: Grow height of the window.
