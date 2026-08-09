@@ -11,9 +11,9 @@ sudo ./onestep.sh
 
 # Keybinds
 ## System & Media
-- `$mod + C`: Reload the i3.
-- `$mod + R`: Restart i3.
-- `$mod + P`: Exit i3.
+- `Super + C`: Reload the i3.
+- `Super + R`: Restart i3.
+- `Super + P`: Exit i3.
 - `XF86AudioRaiseVolume` or `FN + F4`: Increases the volume by 5%.
 - `XF86AudioLowerVolume` or `FN + F4`: Decreases the volume by 5%.
 - `XF86AudioMute` or `FN + F4`: Mutes or unmutes the default audio device.
