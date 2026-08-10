@@ -20,7 +20,10 @@ if [[ "$ans" == "pacman" ]]; then
     echo -e "Script will install paru from pacman"
     echo -e "Installing paru..." 
     sudo pacman -S paru --noconfirm --needed > /dev/null 2>&1
-fi
+    echo -e "✓ $package installed"
+    else
+        echo -e "✗ Error while installing $package"
+    fi
 
 # Paru Packages
 echo -e "Install picom-ftlabs-git and helium-browser-bin"
@@ -35,11 +38,11 @@ paru -Syu --noconfirm --needed > /dev/null 2>&1
 
 # Paru Install
 for package in "${PACKAGESPARU[@]}"; do
-    echo "Установка $package..."
+    echo "Installing $package..."
     paru -S "$package" --noconfirm --needed > /dev/null 2>&1
     echo -e "✓ $package installed"
-else
-    echo -e "✗ Error while installing $package"
+    else
+        echo -e "✗ Error while installing $package"
     fi
 done
 
