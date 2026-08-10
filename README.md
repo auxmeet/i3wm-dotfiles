@@ -16,8 +16,8 @@ sudo ./onestep.sh
 - `Super + C`: Reload the i3.
 - `Super + R`: Restart i3.
 - `Super + P`: Exit i3.
-- `XF86AudioRaiseVolume` or `FN + F4`: Increases the volume by 5%.
-- `XF86AudioLowerVolume` or `FN + F4`: Decreases the volume by 5%.
+- `XF86AudioRaiseVolume` or `FN + F3`: Increases the volume by 5%.
+- `XF86AudioLowerVolume` or `FN + F2`: Decreases the volume by 5%.
 - `XF86AudioMute` or `FN + F4`: Mutes or unmutes the default audio device.
 
 ## Window & Application Management
