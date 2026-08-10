@@ -56,7 +56,8 @@ sudo cp -r -v rofi dunst kitty picom polybar i3 fastfetch "$HOME/.config/"
 
 # Set permissions
 echo -e "Set +x permissions..."
-sudo chmod +x "$HOME/.config/bspwm/bspwmrc"
-sudo chmod +x "$HOME/.config/sxhkd/sxhkdrc"
+sudo chmod -v +x "$HOME/.config/bspwm/bspwmrc"
+sudo chmod -v +x "$HOME/.config/sxhkd/sxhkdrc"
 
 echo -e "✓ All set!"
+fi
