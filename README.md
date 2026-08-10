@@ -97,8 +97,5 @@ sudo ./onestep.sh
 ## Installed with paru:
 - picom-ftlabs-git - A Fork of Picom that support animations. 
 
-# Screenshot
-*soon*
-
 # Wallpaper
 ![wall.jpg](wall.jpg)
