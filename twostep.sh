@@ -21,9 +21,9 @@ if [[ "$ans" == "pacman" ]]; then
     echo -e "Installing paru..." 
     sudo pacman -S paru --noconfirm --needed > /dev/null 2>&1
     echo -e "✓ $package installed"
-    else
-        echo -e "✗ Error while installing $package"
-    fi
+else
+    echo -e "✗ Error while installing $package"
+fi
 
 # Paru Packages
 echo -e "Install picom-ftlabs-git and helium-browser-bin"
