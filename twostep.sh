@@ -41,7 +41,6 @@ for package in "${PACKAGESPARU[@]}"; do
     else
         echo -e "✗ Error while installing $package"
     fi
-done
 
 # Copy wallpaper
 echo -e "Copy wallpaper.."
