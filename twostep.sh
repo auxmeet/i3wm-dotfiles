@@ -38,12 +38,13 @@ paru -Syu --noconfirm --needed > /dev/null 2>&1
 
 # Paru Install
 for package in "${PACKAGESPARU[@]}"; do
-    echo "Installing $package..."
-    paru -S "$package" --noconfirm --needed > /dev/null 2>&1
+  echo "Installing $package..."
+  if paru -S "$package" --noconfirm --needed > /dev/null 2>&1; then
     echo -e "✓ $package installed"
-else
+  else
     echo -e "✗ Error while installing $package"
-fi
+  fi
+done
 
 # Copy wallpaper
 echo -e "Copy wallpaper.."
