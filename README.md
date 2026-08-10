@@ -8,7 +8,9 @@ chmod +x twostep.sh
 sudo ./onestep.sh
 ./twostep.sh
 ```
+
 ## !! Use only [CachyOS](https://cachyos.org/download/) or other Arch-based !!
+
 # Keybinds
 ## System & Media
 - `Super + C`: Reload the i3.
@@ -97,3 +99,6 @@ sudo ./onestep.sh
 
 # Screenshot
 *soon*
+
+# Wallpaper
+![wall.jpg](wall.jpg)
