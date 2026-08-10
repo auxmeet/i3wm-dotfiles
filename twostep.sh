@@ -41,6 +41,7 @@ for package in "${PACKAGESPARU[@]}"; do
     else
         echo -e "✗ Error while installing $package"
     fi
+done
 
 # Copy wallpaper
 echo -e "Copy wallpaper.."
@@ -58,4 +59,4 @@ sudo chmod -v +x "$HOME/.config/bspwm/bspwmrc"
 sudo chmod -v +x "$HOME/.config/sxhkd/sxhkdrc"
 
 echo -e "✓ All set!"
-fi
+
