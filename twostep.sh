@@ -18,10 +18,9 @@ fi
 # Pacman paru
 if [[ "$ans" == "pacman" ]]; then
     echo -e "Script will install paru from pacman"
-for package in "${PACKAGESPACMAN[@]}"; do
+    for package in "${PACKAGESPACMAN[@]}"; do
         echo "Installing $package..."
         paru -S "$package" --noconfirm --needed > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
         echo -e "✓ $package installed"
     else
         echo -e "✗ Error while installing $package"
@@ -50,9 +49,9 @@ paru -Syu --noconfirm --needed > /dev/null 2>&1
 #done
 
 for package in "${PACKAGESPARU[@]}"; do
-    echo "Установка $package..."
-    paru -S "$package" --noconfirm --needed > /dev/null 2>&1
-    echo -e "✓ $package installed"
+echo "Установка $package..."
+paru -S "$package" --noconfirm --needed > /dev/null 2>&1
+echo -e "✓ $package installed"
     else
         echo -e "✗ Error while installing $package"
     fi
