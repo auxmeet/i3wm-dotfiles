@@ -11,6 +11,9 @@ sudo ./onestep.sh
 
 ## !! Use only [CachyOS](https://cachyos.org/download/) or other Arch-based !!
 
+# How to use Fastfetch
+`fastfetch --config ~/.config/fastfetch/fastfetch.jsonc`
+
 # Keybinds
 ## System & Media
 - `Super + C`: Reload the i3.
