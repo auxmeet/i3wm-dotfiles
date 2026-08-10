@@ -1,33 +1,62 @@
 #!/bin/bash
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m'
-echo -e "${YELLOW}Installing paru...${NC}"
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-echo -e "${YELLOW}Install picom-ftlabs-git and set wallpaper...${NC}"
+
+# Info
+echo -e "Paru helper needed"
+echo -e "Install from git or pacman"
+read -p "Continue? (pacman/git): " ans
+
+# Git paru
+if [[ "$ans" == "git" ]]; then
+    echo -e "Script will install paru from git"
+    echo -e "Installing paru..."
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+    cd ..
+fi
+
+# Pacman paru
+if [[ "$ans" == "pacman" ]]; then
+    echo -e "Script will install paru from pacman"
+    echo -e "Installing paru..." 
+    sudo pacman -S paru --noconfirm --needed > /dev/null 2>&1
+fi
+
+# Paru Packages
+echo -e "Install picom-ftlabs-git and helium-browser-bin"
 PACKAGESPARU=(
     "picom-ftlabs-git"
     "helium-browser-bin"
 )
-echo -e "${YELLOW}Update paru...${NC}"
-paru -Syu --noconfirm --needed
-echo -e "${YELLOW}Install picom-ftlabs-git and set wallpaper...${NC}"
+
+# Paru Update
+echo -e "Update paru..."
+paru -Syu --noconfirm --needed > /dev/null 2>&1
+
+# Paru Install
 for package in "${PACKAGESPARU[@]}"; do
     echo "Установка $package..."
-    paru -S "$package" --noconfirm --needed
+    paru -S "$package" --noconfirm --needed > /dev/null 2>&1
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✓ $package installed${NC}"
+        echo -e "✓ $package installed"
     else
-        echo -e "${RED}✗ Error while installing $package${NC}"
+        echo -e "✗ Error while installing $package"
     fi
 done
-echo -e "${YELLOW}Copy wallpaper..${NC}"
+
+# Copy wallpaper
+echo -e "Copy wallpaper.."
 sudo mkdir -p "$HOME/wallpapers/"
 sudo cp -v wall.jpg "$HOME/wallpapers/"
-echo -e "${YELLOW}Copy dotfiles...${NC}"
+
+# Copy dotfiles
+echo -e "Copy dotfiles..."
 sudo mkdir -p "$HOME/.config/"
 sudo cp -r -v rofi dunst kitty picom polybar i3 fastfetch "$HOME/.config/"
-echo -e "${GREEN}✓ All set!${NC}"
+
+# Set permissions
+echo -e "Set +x permissions..."
+sudo chmod +x "$HOME/.config/bspwm/bspwmrc"
+sudo chmod +x "$HOME/.config/sxhkd/sxhkdrc"
+
+echo -e "✓ All set!"
