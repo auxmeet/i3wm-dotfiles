@@ -18,12 +18,15 @@ fi
 # Pacman paru
 if [[ "$ans" == "pacman" ]]; then
     echo -e "Script will install paru from pacman"
-    echo -e "Installing paru..." 
-    sudo pacman -S paru --noconfirm --needed > /dev/null 2>&1
-    echo -e "✓ $package installed"
-else
-    echo -e "✗ Error while installing $package"
-fi
+for package in "${PACKAGESPACMAN[@]}"; do
+        echo "Installing $package..."
+        paru -S "$package" --noconfirm --needed > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo -e "✓ $package installed"
+    else
+        echo -e "✗ Error while installing $package"
+    fi
+done
 
 # Paru Packages
 echo -e "Install picom-ftlabs-git and helium-browser-bin"
@@ -37,13 +40,22 @@ echo -e "Update paru..."
 paru -Syu --noconfirm --needed > /dev/null 2>&1
 
 # Paru Install
+#for package in "${PACKAGESPARU[@]}"; do
+#  echo "Installing $package..."
+#  if paru -S "$package" --noconfirm --needed > /dev/null 2>&1; then
+#    echo -e "✓ $package installed"
+#  else
+#    echo -e "✗ Error while installing $package"
+#  fi
+#done
+
 for package in "${PACKAGESPARU[@]}"; do
-  echo "Installing $package..."
-  if paru -S "$package" --noconfirm --needed > /dev/null 2>&1; then
+    echo "Установка $package..."
+    paru -S "$package" --noconfirm --needed > /dev/null 2>&1
     echo -e "✓ $package installed"
-  else
-    echo -e "✗ Error while installing $package"
-  fi
+    else
+        echo -e "✗ Error while installing $package"
+    fi
 done
 
 # Copy wallpaper
