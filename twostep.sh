@@ -5,6 +5,10 @@ echo -e "Paru helper needed"
 echo -e "Install from git or pacman"
 read -p "Continue? (pacman/git): " ans
 
+PACKAGESPACMAN=(
+    "paru"
+)
+
 # Git paru
 if [[ "$ans" == "git" ]]; then
     echo -e "Script will install paru from git"
