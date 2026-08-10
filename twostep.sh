@@ -22,7 +22,7 @@ for package in "${PACKAGESPACMAN[@]}"; do
     echo "Installing $package..."
     paru -S "$package" --noconfirm --needed > /dev/null 2>&1
     echo -e "✓ $package installed"
-else
+    else
         echo -e "✗ Error while installing $package"
     fi
 done
