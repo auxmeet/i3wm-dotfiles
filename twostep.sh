@@ -22,9 +22,9 @@ if [[ "$ans" == "pacman" ]]; then
         echo "Installing $package..."
         paru -S "$package" --noconfirm --needed > /dev/null 2>&1
         echo -e "✓ $package installed"
-    else
-        echo -e "✗ Error while installing $package"
-    fi
+        else
+            echo -e "✗ Error while installing $package"
+        fi
 done
 
 # Paru Packages
