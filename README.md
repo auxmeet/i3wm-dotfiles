@@ -74,27 +74,27 @@ sudo ./onestep.sh
 
 - kitty - Fast GPU Terminal.
 
-- maim - A Command-Line Utility Used to Capture Screenshots.
+- maim - Command-Line Utility Used to Capture Screenshots.
 
-- feh - A Fast Lightweight Image Viewer and Wallpaper.
+- feh - Fast Lightweight Image Viewer and Wallpaper.
 
-- xclip - A Command-Line Tool that makes copy your Screenshot.
+- xclip - Command-Line Tool that makes copy your Screenshot.
 
 - fastfetch - Command-Line Utility that Displays Hardware Information.
 
-- xorg-xsetroot - A Command-Line Tool used to Customize Cursor on an X11 Display Server.
+- xorg-xsetroot - Command-Line Tool used to Customize Cursor on an X11 Display Server.
 
-- xorg-xrandr - A Command-Line Utility for X Window System lets you Change Screen Resolutions and Refresh Rates.
+- xorg-xrandr - Command-Line Utility for X Window System lets you Change Screen Resolutions and Refresh Rates.
 
-- xorg-xinit - A Program Used to manually Start Xorg Display Server.
+- xorg-xinit - Program Used to manually Start Xorg Display Server.
 
-- xorg-server - A Display Server to manage the Graphical User Interface.
+- xorg-server - Display Server to manage the Graphical User Interface.
 
-- base-devel - A Package Group used for Compiling and Building Software.
+- base-devel - Package Group used for Compiling and Building Software.
 
-- ly - A Lightweight Command-line Display Manager.
+- ly - Lightweight Command-line Display Manager.
 
-## Installed with git:
+## Installed from git:
 - paru - A Feature-Packed Helper and Wrapper for Pacman.
 
 ## Installed with paru:
