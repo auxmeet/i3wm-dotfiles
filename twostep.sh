@@ -3,14 +3,15 @@
 # Info
 echo -e "Paru helper needed"
 echo -e "Install from git or pacman"
-read -p "Continue? (pacman/git): " ans
+echo -e "p = pacman g = git"
+read -p "Continue? (p/g): " ans
 
 PACKAGESPACMAN=(
     "paru"
 )
 
 # Git paru
-if [[ "$ans" == "git" ]]; then
+if [[ "$ans" == "g" ]]; then
     echo -e "Script will install paru from git"
     echo -e "Installing paru..."
     git clone https://aur.archlinux.org/paru.git
@@ -20,7 +21,7 @@ if [[ "$ans" == "git" ]]; then
 fi
 
 # Pacman paru
-if [[ "$ans" == "pacman" ]]; then
+if [[ "$ans" == "p" ]]; then
     echo -e "Script will install paru from pacman"
 for package in "${PACKAGESPACMAN[@]}"; do
         echo "Installing $package..."
@@ -63,12 +64,6 @@ sudo cp -v wall.jpg "$HOME/wallpapers/"
 echo -e "Copy dotfiles..."
 sudo mkdir -p "$HOME/.config/"
 sudo cp -r -v rofi dunst kitty picom polybar i3 fastfetch "$HOME/.config/"
-
-# Set permissions
-echo -e "Set +x permissions..."
-sudo chmod -v +x "$HOME/.config/bspwm/bspwmrc"
-sudo chmod -v +x "$HOME/.config/sxhkd/sxhkdrc"
-
 echo -e "✓ All set!"
 
 fi
