@@ -106,3 +106,5 @@ sudo ./onestep.sh
 
 # Wallpaper
 ![wall.jpg](wall.jpg)
+
+# Also thanks fot support @iromenero
