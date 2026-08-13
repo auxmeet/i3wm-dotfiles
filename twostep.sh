@@ -60,6 +60,10 @@ echo -e "Copy wallpaper.."
 sudo mkdir -p "$HOME/wallpapers/"
 sudo cp -v wall.jpg "$HOME/wallpapers/"
 
+# Copy fish config
+echo -e "Copy fish config..."
+sudo cp -r -v cachyos-fish-config /usr/share/
+
 # Copy dotfiles
 echo -e "Copy dotfiles..."
 sudo mkdir -p "$HOME/.config/"
