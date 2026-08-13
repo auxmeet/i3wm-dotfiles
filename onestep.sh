@@ -21,6 +21,7 @@ PACKAGESPACMAN=(
     "thunar"
     "thunar-archive-plugin"
     "thunar-volman"
+    "mousepad"
     "gamemode"
     "lib32-gamemode"
     "ly"
