@@ -93,7 +93,7 @@ sudo ./onestep.sh
 
 - base-devel - Package Group used for Compiling and Building Software.
 
-- thunar - Fast lightweight file manager from XFCE4
+- thunar - Fast lightweight file manager from Xfce4
 
 - thunar-archive-plugin - Archive extension for the Thunar File Manager lets you right-click files and folders to make or open zip and tar files
 
